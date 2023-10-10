@@ -1,5 +1,6 @@
 package com.tp3.demo.service;
 
+
 import com.tp3.demo.model.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -19,6 +20,11 @@ public class UserServiceImp implements UserService{
     }
 
     @Override
+    public com.tp3.demo.model.User create(com.tp3.demo.model.User user) {
+        return null;
+    }
+
+
     public User create(User user) {
         user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
         return user;
