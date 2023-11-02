@@ -34,7 +34,6 @@ public class User implements UserDetails {
         this.password = password;
     }
 
-
     @Override
     public String getUsername() {
         return name;
