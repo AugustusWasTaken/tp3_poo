@@ -14,7 +14,7 @@
 	<name>Proyecto TP3</name>
 	<description>Proyecto TP3 para POO</description>
 	<properties>
-		<java.version>21</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
