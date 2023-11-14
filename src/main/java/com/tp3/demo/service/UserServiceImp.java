@@ -35,9 +35,10 @@ public class UserServiceImp implements UserService{
 
     @Override
     public User create(User user) {
-        user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
-        String username = scanner.nextLine();
-        user.setName(username);
+        if (userDao.getUserByUsername(user.getFirstname()) == null) {
+            user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
+            userDao.addUser(user);
+        }
         return user;
     }
 }

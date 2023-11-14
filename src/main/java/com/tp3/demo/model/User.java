@@ -8,22 +8,43 @@ import java.util.Arrays;
 import java.util.Collection;
 
 public class User implements UserDetails {
-    private String name;
+    private String firstname;
+
+    private String lastname;
+
+    private String email;
 
     private String password;
 
-    public String getName() {
-        return name;
+
+    public String getEmail() {
+        return email;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String name) {
+        this.firstname = name;
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return Arrays.asList(new SimpleGrantedAuthority("ROLE_USER"));
 
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 
     public String getPassword() {
@@ -36,7 +57,7 @@ public class User implements UserDetails {
 
     @Override
     public String getUsername() {
-        return name;
+        return firstname;
     }
 
     @Override
